@@ -25,6 +25,7 @@ import Collapse from "@/components/ui/collapse";
 import Dot from "@/components/ui/dot";
 import Loader from "@/components/ui/loader";
 import { TonIcon } from "@/components/icons";
+import OneTimeInstallationWarning from "@/components/esims/one-time-installation-warning";
 
 const Package = ({ params }: { params: { country_code: string } }) => {
     const router = useRouter();
@@ -221,6 +222,7 @@ const Package = ({ params }: { params: { country_code: string } }) => {
                 </div>
                 <AdditionalInfo packageData={packageData} />
                 <Manual />
+                <OneTimeInstallationWarning />
                 <Terms terms={terms} setTerms={setTerms} />
             </div>
         </section>

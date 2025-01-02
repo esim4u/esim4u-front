@@ -15,6 +15,7 @@ import { cn, getAccentColor, hapticFeedback, shareRef } from "@/lib/utils";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import OneTimeInstallationWarning from "@/components/esims/one-time-installation-warning";
 import UserEsims from "@/components/esims/user-esims";
 import { TonIcon, WalletIcon } from "@/components/icons";
 import Achievements from "@/components/shared/achievements";
@@ -113,7 +114,7 @@ export default function Profile() {
                 <div className="flex flex-row items-center gap-2">
                     <RefLinkButton />
 
-                    <button className=" active:scale-90 flex h-10 w-10 items-center justify-center rounded-full bg-white">
+                    <button className=" flex h-10 w-10 items-center justify-center rounded-full bg-white active:scale-90">
                         <IoQrCode
                             onClick={() => {
                                 hapticFeedback();
@@ -124,6 +125,7 @@ export default function Profile() {
                     </button>
                 </div>
                 <Achievements fullWidth />
+                <OneTimeInstallationWarning className="rounded-3xl" />
                 <Suspense fallback={<div></div>}>
                     <UserEsims />
                 </Suspense>
